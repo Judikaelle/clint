@@ -1,7 +1,9 @@
 done: install dependencies -> styled-components @types/styled-components react-query?
 done: retrieve api data
+done: define types
 done: create search field
 done: display data
 done: refactoring
-fixme: Check WeatherItemType
-todo: Style weather item card
+done: Check WeatherItemType
+done: Style weather item card
+done: add geolocation
