@@ -47,6 +47,7 @@ const App = () => {
         setError('')
         setIsLoading(false)
       } catch (e) {
+        setError('Oops! Something went wrong...')
         setIsLoading(false)
         console.error(e)
       }
