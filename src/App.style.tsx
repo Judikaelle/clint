@@ -19,4 +19,9 @@ export const Wrapper = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
+
+  @media (max-width: 1740px) {
+    height: 100%;
+    overflow: auto;
+  }
 `
