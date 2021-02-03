@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
+  margin-top: 5rem;
   span {
     display: inline-block;
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    background-color: #3498db;
+    background-color: #fff;
     margin: 35px 5px;
   }
 
