@@ -15,4 +15,4 @@ yarn install
 yarn start
 ```
 
-[Live demo](https://jellysmack-technical-test.netlify.app)
+[Live demo](https://clint-weather-app.netlify.app)
