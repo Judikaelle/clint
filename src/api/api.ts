@@ -7,4 +7,4 @@ export const getWeatherWithInput = async (search: string): Promise<WeatherType> 
   await (await fetch(`${BASE_URL}&q=${search}&appid=${API_KEY}`)).json()
 
 export const getWeatherWithLocation = async (latitude: number, longitude: number): Promise<WeatherType> =>
-  await (await fetch(`${BASE_URL}lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)).json()
+  await (await fetch(`${BASE_URL}&lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)).json()

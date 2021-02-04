@@ -71,7 +71,7 @@ const App = () => {
     } catch (e) {
       setIsLoading(false)
       setError('Can\'t retrieve coordinates with Geolocation API.')
-      console.error(e)
+      console.error(e.message)
     }
   }
 
