@@ -67,6 +67,7 @@ const App = () => {
       handleErrors(result)
       result.list.length = 10
       setWeatherArray(result.list)
+      setCity(`${result.city.name}, ${result.city.country}`)
       setIsLoading(false)
     } catch (e) {
       setIsLoading(false)
