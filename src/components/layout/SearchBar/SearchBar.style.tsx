@@ -53,4 +53,27 @@ export const Wrapper = styled.div`
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
   }
+
+  @media (max-width: 540px) {
+    & input {
+      height: 4rem;
+      font-size: 1.3rem;
+    }
+    
+    & button {
+      width: 4rem;
+      height: 4rem;
+      font-size: 2rem;
+      padding-left: 0.8rem;
+    }
+    
+    &.active input {
+      width: 12rem;
+    }
+
+    &.active button {
+      transform: translateX(11.8rem);
+    }
+    
+  }
 `

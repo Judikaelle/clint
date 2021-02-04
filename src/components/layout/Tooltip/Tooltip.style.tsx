@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  button.info {
+  button {
     position: absolute;
     top: 2rem;
     left: 2rem;

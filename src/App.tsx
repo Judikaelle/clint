@@ -15,8 +15,10 @@ import Geolocation from './components/layout/Geolocation/Geolocation'
 import Heading from './components/layout/Heading/Heading'
 /* UTILS */
 import { getCoords } from './utils/geolocation'
+import { WeatherType } from './types/weather.type'
 
 const App = () => {
+  /* useState */
   const [query, setQuery] = useState<string>('')
   const [city, setCity] = useState<string>('')
   const [weatherArray, setWeatherArray] = useState<WeatherItemType[]>()
@@ -25,24 +27,22 @@ const App = () => {
 
   const handleSearch = async (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
+      /* check input */
       if (query === '') {
         setError('You need to search something 😁')
         setWeatherArray([])
+        setCity('')
         return
       }
       try {
         setIsLoading(true)
         const result = await getWeatherWithInput(query)
-        if (result.cod === '404') {
-          setIsLoading(false)
-          setWeatherArray([])
-          setCity('')
-          setError(result.message + ' 😢')
-          return
-        }
+        /* handle errors */
+        handleErrors(result)
         result.list.length = 10
         setWeatherArray(result.list)
         setCity(`${result.city.name}, ${result.city.country}`)
+        /* clear states */
         setQuery('')
         setError('')
         setIsLoading(false)
@@ -63,19 +63,25 @@ const App = () => {
       const {latitude, longitude} = await getCoords()
       console.log(latitude, longitude)
       const result = await getWeatherWithLocation(latitude, longitude)
-      if (result.cod === '400') {
-        setIsLoading(false)
-        setWeatherArray([])
-        setCity('')
-        setError(result.message + ' 😢')
-        return
-      }
+      /*  handle errors */
+      handleErrors(result)
+      result.list.length = 10
       setWeatherArray(result.list)
       setIsLoading(false)
     } catch (e) {
       setIsLoading(false)
       setError('Can\'t retrieve coordinates with Geolocation API.')
       console.error(e)
+    }
+  }
+
+  const handleErrors = (result: WeatherType) => {
+    if (result.cod !== '200') {
+      setIsLoading(false)
+      setWeatherArray([])
+      setCity('')
+      setError(result.message + ' 😢')
+      return
     }
   }
 

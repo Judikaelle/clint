@@ -7,7 +7,7 @@ import ReactTooltip from 'react-tooltip'
 const Tooltip: React.FC = () => {
   return (
     <Wrapper>
-      <button className='info'>
+      <button>
         <i className="fas fa-info-circle" data-tip='You can press "Enter" to make your search.'/>
       </button>
       <ReactTooltip/>
