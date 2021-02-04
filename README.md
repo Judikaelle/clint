@@ -12,7 +12,8 @@
 git clone https://github.com/Judikaelle/clint
 cd clint
 
-// rename or copy the file env.example to .env and add your OpenWeather API KEY (https://openweathermap.org/)
+// rename or copy the file env.example to .env 
+// and add your OpenWeather API KEY (https://openweathermap.org/)
 mv env.example .env
 
 yarn install
